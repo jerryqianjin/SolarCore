@@ -19,17 +19,35 @@ Unlike cloud-dependent irrigation products, SolarCore is designed to continue op
 
 ## Current Prototype
 
-The first prototype focuses on:
+**Current phase: SolarCore V0.1 single-zone prototype**
 
-- ESP32 controller
-- Solar power and battery storage
-- Soil moisture monitoring
-- Automatic water pump control
-- Local control logic
-- Low-battery protection
-- Maximum irrigation time protection
+The first prototype uses an ESP32-controlled external DC pump connected to a water tank.
+
+V0.1 is focused on validating safe and reliable local irrigation before adding multiple zones, wireless sensor networks, or cloud features.
+
+### Planned V0.1 Functions
+
+- One irrigation zone
+- ESP32 pump control
+- External replaceable DC pump
+- MOSFET pump driver
+- Solar charging and battery storage
+- Soil moisture sensing
+- Low-water-level protection
+- Battery-voltage monitoring
+- Maximum pump-runtime protection
+- Local web control
+- Offline safety operation
 
 ## Project Status
+
+The product architecture and water-source configurations have been defined.
+
+SolarCore V0.1 will use an external pump so that different pump sizes, flow rates, lift heights, and safety behaviors can be tested.
+
+The current development milestone is:
+
+> Safely control the pump with the ESP32 and verify that it always stops when the maximum runtime is reached.
 
 **Current phase: First working prototype**
 
