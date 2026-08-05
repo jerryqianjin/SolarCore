@@ -41,18 +41,20 @@ V0.1 is focused on validating safe and reliable local irrigation before adding m
 
 ## Project Status
 
-The product architecture and water-source configurations have been defined.
+**Current phase: SolarCore V0.1 single-zone prototype**
 
-SolarCore V0.1 will use an external pump so that different pump sizes, flow rates, lift heights, and safety behaviors can be tested.
+The initial product architecture, repository structure and open-source licensing have been established.
 
-The current development milestone is:
+SolarCore V0.1 will use an ESP32-controlled external DC pump connected to a water tank.
 
-> Safely control the pump with the ESP32 and verify that it always stops when the maximum runtime is reached.
+The current technical milestone is to implement safe pump control with:
 
-**Current phase: First working prototype**
-
-Market and open-source research has been completed. The next step is to validate reliable solar-powered irrigation under real outdoor conditions.
-
+- Safe startup and reset behavior
+- Mandatory maximum runtime
+- Low-water protection
+- Low-battery lockout
+- Local offline operation
+  
 ## Roadmap
 
 ### Phase 1 — Solar Prototype
@@ -88,8 +90,13 @@ Market and open-source research has been completed. The next step is to validate
 
 ## Documentation
 
-Project documentation, hardware designs, firmware, test results, and development logs will be added as the prototype evolves.
-
+- [V0.1 Architecture](docs/architecture-v0.1.md)
+- [Roadmap](docs/Roadmap.md)
+- [V0.1 Bill of Materials](hardware/BOM-v0.1.md)
+- [V0.1 Test Plan](tests/test-plan-v0.1.md)
+- [Development Logs](docs/dev-log/)
 ## License
 
-The project license has not yet been selected.
+SolarCore software and firmware are currently licensed under the Apache License 2.0.
+
+Future hardware design files and project documentation may use additional open licenses appropriate to their content.
