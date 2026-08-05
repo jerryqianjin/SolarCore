@@ -2,7 +2,7 @@
 
 **Reliable Solar-Powered Garden Automation**
 
-SolarCore is an open hardware project focused on building a reliable, solar-powered irrigation and outdoor automation system for gardens, balconies, greenhouses, and small farms.
+SolarCore is an open hardware project focused on building reliable, solar-powered irrigation and outdoor automation systems for gardens, balconies, greenhouses, and small farms.
 
 Unlike cloud-dependent irrigation products, SolarCore is designed to continue operating safely when Wi-Fi, the Internet, or external servers are unavailable.
 
@@ -11,91 +11,102 @@ Unlike cloud-dependent irrigation products, SolarCore is designed to continue op
 - Solar-powered and suitable for outdoor deployment
 - Local-first control
 - Safe operation without Internet access
-- Low-power wireless sensor nodes
 - Automatic irrigation with fail-safe protection
 - No mandatory cloud subscription
-- Home Assistant and MQTT compatibility
-- Modular and expandable hardware
+- Modular and replaceable hardware
+- Open interfaces and documentation
+- Future Home Assistant and MQTT compatibility
 
 ## Current Prototype
 
 **Current phase: SolarCore V0.1 single-zone prototype**
 
-The first prototype uses an ESP32-controlled external DC pump connected to a water tank.
+The first prototype will use an ESP32-controlled external DC pump connected to a water tank.
 
-V0.1 is focused on validating safe and reliable local irrigation before adding multiple zones, wireless sensor networks, or cloud features.
+V0.1 is focused on validating the complete power and control chain:
 
-### Planned V0.1 Functions
+```text
+Solar panel
+    ↓
+Solar charge controller
+    ↓
+Battery
+    ↓
+ESP32 controller
+    ↓
+MOSFET pump driver
+    ↓
+External DC pump
+```
+Planned V0.1 Functions
+One irrigation zone
+ESP32 pump control
+External replaceable DC pump
+MOSFET pump driver
+Solar charging and battery storage
+Soil moisture sensing
+Low-water-level protection
+Battery-voltage monitoring
+Maximum pump-runtime protection
+Local web control
+Offline safety operation
+Project Status
 
-- One irrigation zone
-- ESP32 pump control
-- External replaceable DC pump
-- MOSFET pump driver
-- Solar charging and battery storage
-- Soil moisture sensing
-- Low-water-level protection
-- Battery-voltage monitoring
-- Maximum pump-runtime protection
-- Local web control
-- Offline safety operation
+The initial product architecture, repository structure, and open-source licensing have been established.
 
-## Project Status
+The current technical milestone is to validate the solar charging and battery power system before connecting the pump load.
 
-**Current phase: SolarCore V0.1 single-zone prototype**
+The next test phase will verify:
 
-The initial product architecture, repository structure and open-source licensing have been established.
+Solar-panel output voltage
+Solar charge-controller operation
+Battery charging behavior
+Stable ESP32 operation from battery power
+Transition between solar charging and battery-only operation
+Battery-voltage monitoring
+Initial low-voltage protection thresholds
 
-SolarCore V0.1 will use an ESP32-controlled external DC pump connected to a water tank.
+Pump-control testing will begin after the power system has been verified.
 
-The current technical milestone is to implement safe pump control with:
-
-- Safe startup and reset behavior
-- Mandatory maximum runtime
-- Low-water protection
-- Low-battery lockout
-- Local offline operation
-  
-## Roadmap
-
-### Phase 1 — Solar Prototype
-
-- Control a water pump using ESP32
-- Read soil moisture data
-- Test solar charging and battery operation
-- Complete the first automatic watering cycle
-
-### Phase 2 — Reliable Irrigation Controller
-
-- Two irrigation zones
-- Latching solenoid valves
-- Flow monitoring
-- Water tank level detection
-- Local scheduling and safety protection
-
-### Phase 3 — Wireless Sensor Network
-
-- Solar-powered wireless soil sensor nodes
-- LoRa communication
-- Multiple irrigation zones
-- Home Assistant and MQTT integration
-
-### Phase 4 — Outdoor Solar Automation Platform
-
-- Irrigation
-- Mist cooling
-- Greenhouse ventilation
-- Outdoor lighting
-- Water level management
-- Environmental monitoring
-
-## Documentation
-
-- [V0.1 Architecture](docs/architecture-v0.1.md)
-- [Roadmap](docs/Roadmap.md)
-- [V0.1 Bill of Materials](hardware/BOM-v0.1.md)
-- [V0.1 Test Plan](tests/test-plan-v0.1.md)
-- [Development Logs](docs/dev-log/)
-## License
+Roadmap
+Phase 1 — Solar Power and Single-Zone Prototype
+Validate solar-panel output
+Validate battery charging and power stability
+Power the ESP32 from the battery system
+Control an external DC pump using the ESP32
+Add mandatory pump-runtime protection
+Read soil-moisture data
+Add low-water and low-battery protection
+Complete the first automatic watering cycle
+Phase 2 — Reliable Irrigation Controller
+Two independent irrigation zones
+Latching solenoid valves
+Flow monitoring
+Water-tank level detection
+Local scheduling
+Fault logging
+Pump and valve safety protection
+Phase 3 — Wireless Sensor Network
+Solar-powered wireless soil sensor nodes
+LoRa communication
+Multiple irrigation zones
+Home Assistant integration
+MQTT support
+Phase 4 — Open Outdoor Solar Automation Platform
+Irrigation
+Mist cooling
+Greenhouse ventilation
+Outdoor lighting
+Water-level management
+Rainwater collection
+Environmental monitoring
+Documentation
+V0.1 Architecture
+Roadmap
+V0.1 Bill of Materials
+V0.1 Test Plan
+Development Logs
+License
 
 SolarCore software and firmware are currently licensed under the Apache License 2.0.
 
