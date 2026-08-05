@@ -61,8 +61,17 @@ SolarCore/
 └── tests/
     └── test-plan-v0.1.md
 ```
-Next Milestone
+## Next Milestone
 
-The next technical milestone is to verify that the ESP32 can safely start and stop the external DC pump.
+The next technical milestone is to validate the solar charging and battery power system before connecting the pump load.
 
-The pump must remain off after startup or reset and must always stop after the configured maximum runtime.
+The test will verify:
+
+- Solar-panel output
+- Battery charging
+- Stable ESP32 power
+- Battery-voltage monitoring
+- Transition between solar charging and battery operation
+- Initial low-voltage protection thresholds
+
+Pump-control testing will begin after the power system has been verified.
